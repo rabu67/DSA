@@ -5,7 +5,8 @@ public class QuickSort {
         int n = arr.length;
 
         quickSort(arr, 0, n - 1);
-
+        
+        System.out.println();
         System.out.println("Sorted array: ");
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
@@ -16,6 +17,7 @@ public class QuickSort {
 		
 		if(low < high) {
 			int pi = partition(arr, low, high);
+			System.out.println("partition ---> "+ pi);
 			quickSort(arr, low, pi-1);
 			quickSort(arr, pi+1, high);
 		}
@@ -39,6 +41,11 @@ public class QuickSort {
 		arr[i+1] = arr[high];
 		arr[high] = temp;
 		
+		System.out.println();
+        for( int nums : arr) {
+            System.out.print(nums + " ");
+        }
+        System.out.println();
 		return i+1;
 	}
 }
