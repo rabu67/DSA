@@ -1,7 +1,7 @@
 package com.rabu.stack;
 
 public class Dstack {
-	
+
 	int capacity = 2;
 	int[] stack = new int[capacity];
 	int top = 0;
@@ -15,7 +15,7 @@ public class Dstack {
 	}
 
 	private void expand() {
-		int[] newStack = new int[capacity*2];
+		int[] newStack = new int[capacity * 2];
 		System.arraycopy(stack, 0, newStack, 0, capacity);
 		stack = newStack;
 		capacity *= 2;
@@ -23,7 +23,7 @@ public class Dstack {
 
 	public int pop() {
 		int data = 0;
-		if(isEmpty()) {
+		if (isEmpty()) {
 			System.out.println("Stack is empty, you can't pop the data ");
 		} else {
 			top--;
@@ -31,14 +31,14 @@ public class Dstack {
 			stack[top] = 0;
 			shrink();
 		}
-		
+
 		return data;
 	}
-	
+
 	private void shrink() {
 		int length = size();
-		if(length <= (capacity/2)/2) {
-			capacity/= 2;
+		if (length <= (capacity / 2) / 2) {
+			capacity /= 2;
 		}
 		int[] newStack = new int[capacity];
 		System.arraycopy(stack, 0, newStack, 0, length);
@@ -46,14 +46,13 @@ public class Dstack {
 	}
 
 	public int peek() {
-		return stack[top-1];
+		return stack[top - 1];
 	}
-	
-	
+
 	public int size() {
 		return top;
 	}
-	
+
 	public Boolean isEmpty() {
 		return top == 0 ? true : false;
 	}
