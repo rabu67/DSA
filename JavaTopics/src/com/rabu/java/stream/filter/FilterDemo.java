@@ -1,4 +1,4 @@
-package filter;
+package com.rabu.java.stream.filter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
